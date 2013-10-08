@@ -51,7 +51,6 @@ public:
 
     System();
     void   AddObject(vec pos, vec vel, double m, char* name);
-//    double CalculateDistance(Object ob1,Object ob2);
     void   initializeSolver();
     vec    CalculateForces(vec);
     void   Solve(double);
@@ -192,24 +191,3 @@ int main()
 
     return 0;
 }
-
-//double System::CalculateDistance(Object ob1, Object ob2)
-//{
-//    double distance = 0;
-//    double distx = ob1.position[0]-ob2.position[0];
-//    double disty = ob1.position[1]-ob2.position[1];
-//    distance += distx*distx;
-//    distance += disty*disty;
-//    return sqrt(distance);
-//}
-
-
-//    Object earth(pos1,pos1,1, "test");
-//    Object moon(pos2,vel2,0.1, "test");
-
-//    cout << earth.position[0]<< endl;
-//    cout << test.CalculateDistance(earth,moon) << endl;
-//    cout << test.NumberOfObjects << endl;
-
-//    cout << test.NumberOfObjects << endl;
-//    cout << test.ObjectList[0].mass << endl;
