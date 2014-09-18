@@ -102,10 +102,12 @@ vec System::CalculateForces(vec B) { //Computes the right hand side of the diffe
             double r = sqrt(x*x + y*y);
 
             double f = -(G * ObjectList[j].mass * ObjectList[k].mass) / (r * r * r);
-            Forces[2*j+0] += f * x;      // x-component of the force.
-            Forces[2*j+1] += f * y;      // y-component of the force.
-            Forces[2*k+0] -= Forces[2*j+0];    // Newtons third law, bitches.
-            Forces[2*k+1] -= Forces[2*j+1];    // Newtons third law, bitches.
+            x = f*x;
+            y = f*y;
+            Forces[2*j+0] += x;     // x-component of the force.
+            Forces[2*j+1] += y;     // y-component of the force.
+            Forces[2*k+0] -= x;     // Newtons third law, bitches.
+            Forces[2*k+1] -= y;     // Newtons third law, bitches.
         }
     }
 
